@@ -1,0 +1,10 @@
+services:
+  squid:
+    image: sameersbn/squid:3.5.27-2
+    container_name: squid
+    restart: unless-stopped
+    ports:
+      - "8080:3128"
+    volumes:
+      - ./squid/squid.conf:/etc/squid/squid.conf
+      - ./passwords:/etc/squid/passwords:ro
